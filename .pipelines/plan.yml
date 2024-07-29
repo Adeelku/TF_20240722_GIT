@@ -3,9 +3,6 @@ pr:
   branches:
     include:
       - 'main'
-  paths:
-    include:
-      - ../terraform
   
       
 pool:
