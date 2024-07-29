@@ -4,7 +4,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo basic pipeline
+- script: echo basic pipeline new
     
 
 
