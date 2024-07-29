@@ -14,8 +14,16 @@ parameters:
       - dev
       - uat
 
+variables:
+- name: inVar
+  value: my inline variable
+- template: ../variables/${{ parameters.Env }}.yml
+
 steps:
-- script: echo ${{ parameters.Env }}
+- script: |
+    echo environnment is ${{ parameters.Env }}
+    echo my SubscriptionID is $(subID)\
+    echo my in file var is $(inVar)
 
 
     
