@@ -6,8 +6,18 @@ pr:
 pool:
   vmImage: ubuntu-latest
 
+parameters:
+  - name: Env
+    default: dev
+    values:
+      - prod
+      - dev
+      - uat
+
 steps:
-- script: echo basic pipeline new
+- script: echo $ {{ parameters.Env }}
+
+
     
 
 
