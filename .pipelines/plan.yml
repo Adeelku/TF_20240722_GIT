@@ -11,6 +11,7 @@ pool:
 
 parameters:
   - name: Env
+    default: dev
     values:
       - dev
       - prod
