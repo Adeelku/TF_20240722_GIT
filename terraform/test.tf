@@ -4,6 +4,5 @@ resource "azurerm_resource_group" "my_rg" {
   tags = {
     "Owner"       = "Bo Katan Kryze"
     "Cost Center" = "Mandalor Core"
-
   }
 }

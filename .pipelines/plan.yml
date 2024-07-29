@@ -1,8 +1,12 @@
 trigger:  none
 pr:
   branches:
-    exclude:
-      - '*'
+    include:
+      - 'main'
+  paths:
+    include:
+      - ./terraform
+  
       
 pool:
   vmImage: ubuntu-latest
@@ -19,6 +23,7 @@ variables:
 - template: ../variables/${{ parameters.Env }}.yml
 steps:
 
+  
 - task: AzureCLI@2
   inputs:
     azureSubscription: $(serviceConnection)
@@ -32,6 +37,7 @@ steps:
       export ARM_SUBSCRIPTION_ID=`az account show -o json | jq .id | tr -d '"'`
       export ARM_TENANT_ID=$tenantId
 
+      terraform validate
       terraform init
       terraform plan
 
