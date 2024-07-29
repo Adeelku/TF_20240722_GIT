@@ -5,10 +5,10 @@
 
 trigger: none
 
-# pr:
-#   branches:
-#     include:
-#       - main
+pr:
+  branches:
+    exclude:
+      - '*'
 
 pool:
   vmImage: ubuntu-latest
