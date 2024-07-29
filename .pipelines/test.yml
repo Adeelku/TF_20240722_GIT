@@ -18,7 +18,7 @@ variables:
 - name: inVar
   value: my inline variable
 - template: ../variables/${{ parameters.Env }}.yml
-
+- group: group-${{ parameters.Env }}
 
 steps:
 - script: |
