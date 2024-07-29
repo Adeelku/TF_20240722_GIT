@@ -18,12 +18,14 @@ variables:
 - name: inVar
   value: my inline variable
 - template: ../variables/${{ parameters.Env }}.yml
+# - group: group-${{ parameters.Env }}
 
 steps:
 - script: |
     echo environnment is ${{ parameters.Env }}
-    echo my SubscriptionID is $(subID)\
+    echo my SubscriptionID is $(subID)
     echo my in file var is $(inVar)
+    echo mysupersecret
 
 
     
