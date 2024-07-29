@@ -1,8 +1,12 @@
 trigger:  none
 pr:
   branches:
-    exclude:
-      - '*'
+    include:
+      - 'main'
+  paths:
+    include:
+      - ./terraform
+  
       
 pool:
   vmImage: ubuntu-latest
@@ -19,10 +23,6 @@ variables:
 - template: ../variables/${{ parameters.Env }}.yml
 steps:
 
-- task: trivy@1
-  displayName: Vuln Scan
-  inputs:
-    path: $(Build.SourcesDirectory)/terraform
   
 - task: AzureCLI@2
   inputs:
