@@ -1,5 +1,8 @@
 trigger:  none
-
+pr:
+  branches:
+    exclude:
+      - '*'
 pool:
   vmImage: ubuntu-latest
 
